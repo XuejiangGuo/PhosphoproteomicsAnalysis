@@ -38,7 +38,7 @@ imf <- imf %>%
 
 imf <- imf %>%
   mutate(PhosphositeID = paste(ProteinID, `Amino acid`, Position, sep = "_")) %>%
-  select(PhosphositeID, everything())
+  dplyr::select(PhosphositeID, everything())
 
 
 
