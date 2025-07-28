@@ -56,6 +56,9 @@ enrichresult <- enrichtest(data$ENTREZID)
 enrichresult$qvalue <- NULL
 
 
+write.csv(enrichresult, file = '../data/Phosphoproteins_enrich/phosphoproteins_enrich.csv',
+          row.names = F)
+
 table2excel(x=enrichresult,
             file='../data/Phosphoproteins_enrich/phosphoproteins_enrich.xlsx',
             sheetName='enrichresult',
