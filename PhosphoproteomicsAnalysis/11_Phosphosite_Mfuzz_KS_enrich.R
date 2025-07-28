@@ -55,7 +55,8 @@ results <- NULL
 for (clu in sort(unique(clus))){
   
   in_ps <- phos$PhosphositeID[phos$Mfuzz_cluster == clu]
-  out_ps <- phos$PhosphositeID[phos$Mfuzz_cluster != clu]
+  out_ps <- phos$PhosphositeID[phos$Mfuzz_cluster == "NO"]
+#  out_ps <- phos$PhosphositeID[phos$Mfuzz_cluster != clu]
   
   in_GPS <- GPS[GPS$PhosphositeID %in% in_ps, ]
   out_GPS <- GPS[GPS$PhosphositeID %in% out_ps, ]
