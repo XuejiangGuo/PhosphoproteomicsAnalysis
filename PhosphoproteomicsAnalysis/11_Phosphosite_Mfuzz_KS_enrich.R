@@ -4,7 +4,7 @@ library(dplyr)
 phos <- read.csv("../data/Phosphosite_data/Phosphosite_Diffanalysis(p.adjust0.05_fc2).csv", 
                  check.names=FALSE)
 
-GPS <- read.csv("../data/KS_Net/KSNet_GPS.csv", check.names =FALSE)
+KS_net <- read.csv("../data/KS_Net/KSNet_GPS.csv", check.names =FALSE)
 GPS <- KS_net[which(KS_net$Peptide %in% phos$Peptide),]
 GPS <- unique(KS_net[,c('PhosphositeID', 'Peptide','Kinase')])
 
@@ -70,3 +70,4 @@ for (clu in sort(unique(clus))){
 
 write.csv(results, "../data/Phosphosite_Mfuzz_KS_enrich/Phosphosite_Mfuzz_KS_enrich.csv", 
           row.names=FALSE)
+
